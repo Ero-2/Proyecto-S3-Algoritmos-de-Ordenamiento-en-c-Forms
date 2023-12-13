@@ -95,6 +95,36 @@ namespace Proyecto_S3_Algoritmos_de_Ordenamiento_en_c__Forms
             ArrayAfterPigeonholeSortLabel.Text = "Array after Pigeonhole Sort: ";
             PrintArray(pigeonholeSortArray, ArrayAfterPigeonholeSortListBox);
 
+            // Gnomesort
+            int[] Gnomesort = (int[])array.Clone();
+            GnomeSort(Gnomesort);
+            ArrayAftergnomeSortLabel.Text = "Array after Gnome Sort: ";
+            PrintArray(pigeonholeSortArray, ArrayAftergnomesortListBox);
+
+            //CombSort
+            int[] CombbSort = (int[])array.Clone();
+            CombSort(CombbSort);
+            ArrayAfterCombSortLabel.Text = "Array after Comb Sort: ";
+            PrintArray(pigeonholeSortArray, ArrayAfterCombsortListBox);
+
+            //SelectionSort
+            int[] SelectionnSort = (int[])array.Clone();
+            SelectionSort(SelectionnSort);
+            ArrayAfterSelectionSortLabel.Text = "Array after Selection Sort: ";
+            PrintArray(pigeonholeSortArray, ArrayAfterSelectionsortListBox);
+
+            //HeapSort
+            int[] HeappSort = (int[])array.Clone();
+            HeapSort(HeappSort);
+            ArrayAfterHeapSortLabel.Text = "Array after Selection Sort: ";
+            PrintArray(pigeonholeSortArray, ArrayAfterHeapsortListBox);
+
+            //CountingSort
+            int[] CountinggSort = (int[])array.Clone();
+            CountingSort(CountinggSort);
+            ArrayAfterCountingSortLabel.Text = "Array after Selection Sort: ";
+            PrintArray(pigeonholeSortArray, ArrayAfterCountingsortListBox);
+
             MessageBox.Show("Sorting complete!");
 
         }
@@ -554,6 +584,158 @@ namespace Proyecto_S3_Algoritmos_de_Ordenamiento_en_c__Forms
                 }
             }
         }
+
+        static void GnomeSort(int[] arr)
+        {
+            int n = arr.Length;
+            int index = 0;
+
+            while (index < n)
+            {
+                if (index == 0)
+                    index++;
+                if (arr[index] >= arr[index - 1])
+                    index++;
+                else
+                {
+                    Swap(ref arr[index], ref arr[index - 1]);
+                    index--;
+                }
+            }
+        }
+
+        static void CombSort(int[] arr)
+        {
+            int n = arr.Length;
+            int gap = n;
+            bool swapped = true;
+
+            while (gap > 1 || swapped)
+            {
+                gap = Math.Max(1, (int)(gap / 1.3));
+
+                swapped = false;
+
+                for (int i = 0; i + gap < n; i++)
+                {
+                    if (arr[i] > arr[i + gap])
+                    {
+                        Swap(ref arr[i], ref arr[i + gap]);
+                        swapped = true;
+                    }
+                }
+            }
+        }
+
+        static void SelectionSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                int minIndex = i;
+
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[j] < arr[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+
+                Swap(ref arr[i], ref arr[minIndex]);
+            }
+        }
+
+        static void HeapSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            // Construir el heap (montículo)
+            for (int i = n / 2 - 1; i >= 0; i--)
+            {
+                Heapify(arr, n, i);
+            }
+
+            // Extraer elementos del heap uno por uno
+            for (int i = n - 1; i > 0; i--)
+            {
+                // Mover la raíz actual al final del array
+                Swap(ref arr[0], ref arr[i]);
+
+                // Llamar al procedimiento Heapify en la raíz reducida
+                Heapify(arr, i, 0);
+            }
+        }
+
+        static void Heapify(int[] arr, int n, int i)
+        {
+            int largest = i;
+            int leftChild = 2 * i + 1;
+            int rightChild = 2 * i + 2;
+
+            // Si el hijo izquierdo es más grande que la raíz
+            if (leftChild < n && arr[leftChild] > arr[largest])
+            {
+                largest = leftChild;
+            }
+
+            // Si el hijo derecho es más grande que el más grande hasta ahora
+            if (rightChild < n && arr[rightChild] > arr[largest])
+            {
+                largest = rightChild;
+            }
+
+            // Si el más grande no es la raíz
+            if (largest != i)
+            {
+                Swap(ref arr[i], ref arr[largest]);
+
+                // Llamar recursivamente al procedimiento Heapify en el subárbol afectado
+                Heapify(arr, n, largest);
+            }
+        }
+
+        static void CountingSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            // Encontrar el valor máximo en el array
+            int max = arr[0];
+            for (int i = 1; i < n; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+
+            // Crear un array de conteo y inicializar todas las posiciones con 0
+            int[] count = new int[max + 1];
+            for (int i = 0; i <= max; i++)
+            {
+                count[i] = 0;
+            }
+
+            // Incrementar el conteo de cada elemento en el array original
+            for (int i = 0; i < n; i++)
+            {
+                count[arr[i]]++;
+            }
+
+            // Actualizar el array original con los elementos ordenados
+            int index = 0;
+            for (int i = 0; i <= max; i++)
+            {
+                while (count[i] > 0)
+                {
+                    arr[index] = i;
+                    index++;
+                    count[i]--;
+                }
+            }
+        }
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

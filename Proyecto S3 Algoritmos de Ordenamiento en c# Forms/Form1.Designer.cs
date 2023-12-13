@@ -52,6 +52,16 @@
             this.ArrayAfterShellSortListBox = new System.Windows.Forms.ListBox();
             this.ArrayAfterPigeonholeSortLabel = new System.Windows.Forms.Label();
             this.ArrayAfterPigeonholeSortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAftergnomeSortLabel = new System.Windows.Forms.Label();
+            this.ArrayAftergnomesortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAfterCombSortLabel = new System.Windows.Forms.Label();
+            this.ArrayAfterCombsortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAfterSelectionSortLabel = new System.Windows.Forms.Label();
+            this.ArrayAfterSelectionsortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAfterHeapSortLabel = new System.Windows.Forms.Label();
+            this.ArrayAfterHeapsortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAfterCountingsortListBox = new System.Windows.Forms.ListBox();
+            this.ArrayAfterCountingSortLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // OriginalArrayLabel
@@ -259,11 +269,106 @@
             this.ArrayAfterPigeonholeSortListBox.Size = new System.Drawing.Size(120, 17);
             this.ArrayAfterPigeonholeSortListBox.TabIndex = 23;
             // 
+            // ArrayAftergnomeSortLabel
+            // 
+            this.ArrayAftergnomeSortLabel.AutoSize = true;
+            this.ArrayAftergnomeSortLabel.Location = new System.Drawing.Point(553, 219);
+            this.ArrayAftergnomeSortLabel.Name = "ArrayAftergnomeSortLabel";
+            this.ArrayAftergnomeSortLabel.Size = new System.Drawing.Size(35, 13);
+            this.ArrayAftergnomeSortLabel.TabIndex = 24;
+            this.ArrayAftergnomeSortLabel.Text = "label1";
+            // 
+            // ArrayAftergnomesortListBox
+            // 
+            this.ArrayAftergnomesortListBox.FormattingEnabled = true;
+            this.ArrayAftergnomesortListBox.Location = new System.Drawing.Point(516, 252);
+            this.ArrayAftergnomesortListBox.Name = "ArrayAftergnomesortListBox";
+            this.ArrayAftergnomesortListBox.Size = new System.Drawing.Size(120, 17);
+            this.ArrayAftergnomesortListBox.TabIndex = 25;
+            // 
+            // ArrayAfterCombSortLabel
+            // 
+            this.ArrayAfterCombSortLabel.AutoSize = true;
+            this.ArrayAfterCombSortLabel.Location = new System.Drawing.Point(718, 219);
+            this.ArrayAfterCombSortLabel.Name = "ArrayAfterCombSortLabel";
+            this.ArrayAfterCombSortLabel.Size = new System.Drawing.Size(35, 13);
+            this.ArrayAfterCombSortLabel.TabIndex = 26;
+            this.ArrayAfterCombSortLabel.Text = "label1";
+            // 
+            // ArrayAfterCombsortListBox
+            // 
+            this.ArrayAfterCombsortListBox.FormattingEnabled = true;
+            this.ArrayAfterCombsortListBox.Location = new System.Drawing.Point(668, 252);
+            this.ArrayAfterCombsortListBox.Name = "ArrayAfterCombsortListBox";
+            this.ArrayAfterCombsortListBox.Size = new System.Drawing.Size(120, 17);
+            this.ArrayAfterCombsortListBox.TabIndex = 27;
+            // 
+            // ArrayAfterSelectionSortLabel
+            // 
+            this.ArrayAfterSelectionSortLabel.AutoSize = true;
+            this.ArrayAfterSelectionSortLabel.Location = new System.Drawing.Point(42, 296);
+            this.ArrayAfterSelectionSortLabel.Name = "ArrayAfterSelectionSortLabel";
+            this.ArrayAfterSelectionSortLabel.Size = new System.Drawing.Size(35, 13);
+            this.ArrayAfterSelectionSortLabel.TabIndex = 28;
+            this.ArrayAfterSelectionSortLabel.Text = "label1";
+            // 
+            // ArrayAfterSelectionsortListBox
+            // 
+            this.ArrayAfterSelectionsortListBox.FormattingEnabled = true;
+            this.ArrayAfterSelectionsortListBox.Location = new System.Drawing.Point(18, 325);
+            this.ArrayAfterSelectionsortListBox.Name = "ArrayAfterSelectionsortListBox";
+            this.ArrayAfterSelectionsortListBox.Size = new System.Drawing.Size(120, 17);
+            this.ArrayAfterSelectionsortListBox.TabIndex = 29;
+            // 
+            // ArrayAfterHeapSortLabel
+            // 
+            this.ArrayAfterHeapSortLabel.AutoSize = true;
+            this.ArrayAfterHeapSortLabel.Location = new System.Drawing.Point(243, 296);
+            this.ArrayAfterHeapSortLabel.Name = "ArrayAfterHeapSortLabel";
+            this.ArrayAfterHeapSortLabel.Size = new System.Drawing.Size(35, 13);
+            this.ArrayAfterHeapSortLabel.TabIndex = 30;
+            this.ArrayAfterHeapSortLabel.Text = "label1";
+            // 
+            // ArrayAfterHeapsortListBox
+            // 
+            this.ArrayAfterHeapsortListBox.FormattingEnabled = true;
+            this.ArrayAfterHeapsortListBox.Location = new System.Drawing.Point(218, 325);
+            this.ArrayAfterHeapsortListBox.Name = "ArrayAfterHeapsortListBox";
+            this.ArrayAfterHeapsortListBox.Size = new System.Drawing.Size(120, 17);
+            this.ArrayAfterHeapsortListBox.TabIndex = 31;
+            // 
+            // ArrayAfterCountingsortListBox
+            // 
+            this.ArrayAfterCountingsortListBox.FormattingEnabled = true;
+            this.ArrayAfterCountingsortListBox.Location = new System.Drawing.Point(389, 325);
+            this.ArrayAfterCountingsortListBox.Name = "ArrayAfterCountingsortListBox";
+            this.ArrayAfterCountingsortListBox.Size = new System.Drawing.Size(120, 17);
+            this.ArrayAfterCountingsortListBox.TabIndex = 32;
+            // 
+            // ArrayAfterCountingSortLabel
+            // 
+            this.ArrayAfterCountingSortLabel.AutoSize = true;
+            this.ArrayAfterCountingSortLabel.Location = new System.Drawing.Point(431, 296);
+            this.ArrayAfterCountingSortLabel.Name = "ArrayAfterCountingSortLabel";
+            this.ArrayAfterCountingSortLabel.Size = new System.Drawing.Size(35, 13);
+            this.ArrayAfterCountingSortLabel.TabIndex = 33;
+            this.ArrayAfterCountingSortLabel.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ArrayAfterCountingSortLabel);
+            this.Controls.Add(this.ArrayAfterCountingsortListBox);
+            this.Controls.Add(this.ArrayAfterHeapsortListBox);
+            this.Controls.Add(this.ArrayAfterHeapSortLabel);
+            this.Controls.Add(this.ArrayAfterSelectionsortListBox);
+            this.Controls.Add(this.ArrayAfterSelectionSortLabel);
+            this.Controls.Add(this.ArrayAfterCombsortListBox);
+            this.Controls.Add(this.ArrayAfterCombSortLabel);
+            this.Controls.Add(this.ArrayAftergnomesortListBox);
+            this.Controls.Add(this.ArrayAftergnomeSortLabel);
             this.Controls.Add(this.ArrayAfterPigeonholeSortListBox);
             this.Controls.Add(this.ArrayAfterPigeonholeSortLabel);
             this.Controls.Add(this.ArrayAfterShellSortListBox);
@@ -322,6 +427,16 @@
         private System.Windows.Forms.ListBox ArrayAfterShellSortListBox;
         private System.Windows.Forms.Label ArrayAfterPigeonholeSortLabel;
         private System.Windows.Forms.ListBox ArrayAfterPigeonholeSortListBox;
+        private System.Windows.Forms.Label ArrayAftergnomeSortLabel;
+        private System.Windows.Forms.ListBox ArrayAftergnomesortListBox;
+        private System.Windows.Forms.Label ArrayAfterCombSortLabel;
+        private System.Windows.Forms.ListBox ArrayAfterCombsortListBox;
+        private System.Windows.Forms.Label ArrayAfterSelectionSortLabel;
+        private System.Windows.Forms.ListBox ArrayAfterSelectionsortListBox;
+        private System.Windows.Forms.Label ArrayAfterHeapSortLabel;
+        private System.Windows.Forms.ListBox ArrayAfterHeapsortListBox;
+        private System.Windows.Forms.ListBox ArrayAfterCountingsortListBox;
+        private System.Windows.Forms.Label ArrayAfterCountingSortLabel;
     }
 }
 
